@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>10 words Password Generator</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #39ff14;
+		}
+		
+		.container {
+			width: 300px;
+			margin: 50px auto;
+			padding: 20px;
+			background-color: #333;
+			border: 1px solid #ff68b4;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		}
+		
+		.generate-btn {
+			background-color: #ff69b4;
+			color: #39ff14;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		.generate-btn:hover {
+			background-color: #ff69b4;
+		}
+		
+		.password-input {
+			width: 100%;
+			padding: 5px;
+			margin-bottom: 10px;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<div class="container">
+		<h2>10 words Password Generator</h2>
+		<input type="text" id="password" class="password-input" readonly>
+		<button class="generate-btn" onclick="generatePassword()">Generate Password</button>
+	</div>
+		<Marquee>design by<u><b>@akj7831</b></u></Marquee>	
+	<script>
+		function generatePassword() {
+			var length = 10;
+			var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+			var password = "";
+			for (var i = 0; i < length; i++) {
+				password += chars.charAt(Math.floor(Math.random() * chars.length));
+			}
+			document.getElementById("password").value = password;
+		}
+	</script>
+	</center>
+</body>
+</html>
